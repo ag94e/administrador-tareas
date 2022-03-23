@@ -1,0 +1,36 @@
+#Regla para evitar .php en las urls
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(,*)$ $1.php
+
+DirectoryIndex vista/login.php
+
+#login view
+RewriteRule ^vista_login$ vista/login.php [L]
+
+
+###########################################################################################
+####################################### Alumnos ###########################################
+
+# login controller
+RewriteRule ^controlador_login_alumno$ controlador/alumno/controlador_login.php [L]
+
+# cerrar sesion controller
+RewriteRule ^controlador_cerrar_sesion_alumno$ controlador/alumno/controlador_cerrar_sesion.php [L]
+
+#Home
+RewriteRule ^vista_home_alumno$ vista/alumno/home.php [L]
+
+###########################################################################################
+####################################### MAESTROS ##########################################
+
+# login controller
+RewriteRule ^controlador_login_maestro$ controlador/maestro/controlador_login.php [L]
+
+# cerrar sesion controller
+RewriteRule ^controlador_cerrar_sesion_maestro$ controlador/maestro/controlador_cerrar_sesion.php [L]
+
+#Home
+RewriteRule ^vista_home_maestro$ vista//maestro/home.php [L]
