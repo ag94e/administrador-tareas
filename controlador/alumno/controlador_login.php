@@ -16,7 +16,8 @@ if(empty($resultado)){
         $usuario_tabla = $r['usuario'];
         $nombre = $r['nombre'];
     }
-    $_SESSION['usuario'] = $nombre;
+    $_SESSION["nombre"] = $nombre;
+    $_SESSION["usuario"] = $usuario;
 
     exit(json_encode([
         "resultado" => $status,
