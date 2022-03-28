@@ -15,9 +15,11 @@ if(empty($resultado)){
     foreach($resultado as $r){
         $usuario_tabla = $r['usuario'];
         $nombre = $r['nombre'];
+        $id_usuario = $r['id_alumno'];
     }
     $_SESSION["nombre"] = $nombre;
     $_SESSION["usuario"] = $usuario;
+    $_SESSION["id_alumno"] = $id_usuario;
 
     exit(json_encode([
         "resultado" => $status,

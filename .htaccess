@@ -14,7 +14,7 @@ RewriteRule ^vista_login$ vista/login.php [L]
 ###########################################################################################
 ####################################### Alumnos ###########################################
 
-#Home
+# Home
 RewriteRule ^vista_home_alumno$ vista/alumno/home.php [L]
 
 # login controller
@@ -23,6 +23,9 @@ RewriteRule ^controlador_login_alumno$ controlador/alumno/controlador_login.php 
 # home controller
 RewriteRule ^controlador_home_alumno$ controlador/alumno/controlador_home.php [L]
 
+# subir archivo controller
+RewriteRule ^controlador_subir_archivo_alumno$ controlador/alumno/controlador_subir_archivo.php [L]
+
 # cerrar sesion controller
 RewriteRule ^controlador_cerrar_sesion_alumno$ controlador/alumno/controlador_cerrar_sesion.php [L]
 
@@ -30,7 +33,7 @@ RewriteRule ^controlador_cerrar_sesion_alumno$ controlador/alumno/controlador_ce
 ###########################################################################################
 ####################################### MAESTROS ##########################################
 
-#Home
+# Home
 RewriteRule ^vista_home_maestro$ vista//maestro/home.php [L]
 
 # login controller

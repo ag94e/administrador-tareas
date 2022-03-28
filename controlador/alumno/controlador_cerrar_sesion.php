@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-unset($_SESSION['usuario']);
+session_destroy();
 
 exit(json_encode([
     "status" => "1"
