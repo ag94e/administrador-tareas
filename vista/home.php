@@ -22,7 +22,7 @@
         Iniciar
       </button>
       <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-        <li><a class="dropdown-item" href="#">Maestro</a></li>
+        <li><a class="dropdown-item" href="vista_login_maestro">Maestro</a></li>
         <li><a class="dropdown-item" href="vista_login_alumno">Alumno</a></li>
       </ul>
     </div>

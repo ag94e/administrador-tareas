@@ -8,39 +8,25 @@
     <link rel="stylesheet" href="assets/css/toastr.min.css">
     <title>Administración de tareas</title>
 </head>
-<body class="row align-items-center vh-100">
-    <div class="d-flex justify-content-between">
-        <div class="container col-5">
-            <form id="formulario_alumno">
-                <h3 class="text-center">¿Eres alumno? Ingresa <a href="">aquí.</a></h3>
-                <div class="mb-3">
-                    <label for="usuario" class="form-label">Usuario</label>
-                    <input type="text" class="form-control" name="usuario_alumno" id="usuario_alumno" placeholder="Ingresa tu usuario">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" name="password_alumno" id="password_alumno" placeholder="Ingresa tu password">
-                </div>
-                <input class="btn btn-primary" type="button" onclick="login_alumno()" value="Entrar">
-            </form>
-        </div>
-        <div class="container col-5">
-            <form id="formulario_maestro">
-                <h3 class="text-center">¿Eres maestro? Ingresa <a href="">aquí.</a></h3>
-                <div class="mb-3">
-                    <label for="usuario" class="form-label">Usuario</label>
-                    <input type="text" class="form-control" name="usuario_maestro" id="usuario_maestro" placeholder="Ingresa tu usuario">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" name="password_maestro" id="password_maestro" placeholder="Ingresa tu password">
-                </div>
-                <input class="btn btn-primary" type="button" onclick="login_maestro()" value="Entrar">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-2">
+        <img src="assets/img/books.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> 
+        <a class="navbar-brand" href="app_tareas"> App de Tareas</a>
+    </nav>
+    <div class="m-0 row justify-content-center align-items-center">
+        <div class="col-6 text-center">
+            <form id="formulario_maestro" class="col-auto">
+                <h3 class="text-center">Ingresa tus credenciales de maestro</h3>
+                <label for="usuario" class="form-label">Usuario</label>
+                <input type="text" class="form-control" name="usuario_maestro" id="usuario_maestro" placeholder="Ingresa tu usuario">
+                <br>
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" name="password_maestro" id="password_maestro" placeholder="Ingresa tu password">
+                <br><br>
+                <input class="btn btn-primary btn-lg col-12" type="button" onclick="login_maestro()" value="Entrar">
             </form>
         </div>
     </div>
-    
-
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/toastr.min.js"></script>
     <script src="assets/js/login.js"></script>

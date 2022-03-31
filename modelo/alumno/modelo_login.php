@@ -1,4 +1,7 @@
-<?php
+<?php 
+if (!isset($_SESSION["nombre_alumno"])) {
+    header("location: ../../app_tareas");
+}
 include 'conexion.php';
 
 class login{

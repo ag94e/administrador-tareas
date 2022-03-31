@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 include '../../modelo/maestro/modelo_login.php';
 
@@ -14,9 +14,12 @@ if(empty($resultado)){
     $status = 1;
     foreach($resultado as $r){
         $usuario_tabla = $r['usuario'];
-        $nombre = $r['nombre'];
+        $nombre = $r['nombre_maestro'];
+        $id_usuario = $r['id_maestro'];
     }
-    $_SESSION['usuario'] = $nombre;
+    $_SESSION["nombre_maestro"] = $nombre;
+    $_SESSION["usuario"] = $usuario;
+    $_SESSION["id_maestro"] = $id_usuario;
 
     exit(json_encode([
         "resultado" => $status,

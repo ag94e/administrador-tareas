@@ -1,7 +1,10 @@
-<?php
+<?php 
 session_start();
+if (!isset($_SESSION["nombre_maestro"])) {
+    header("location: ../../app_tareas");
+}
 
-unset($_SESSION['usuario']);
+session_destroy();
 
 exit(json_encode([
     "status" => "1"

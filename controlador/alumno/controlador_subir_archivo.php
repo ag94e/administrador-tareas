@@ -1,5 +1,8 @@
-<?php
+<?php 
 session_start();
+if (!isset($_SESSION["nombre_alumno"])) {
+    header("location: ../../app_tareas");
+}
 include '../../modelo/alumno/modelo_subir_archivo.php';
 
 $obj = new archivo();

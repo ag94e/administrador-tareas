@@ -9,10 +9,10 @@
     <title>Administración de tareas</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-2">
-    <img src="assets/img/books.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> 
-    <a class="navbar-brand" href="#"> App de Tareas</a>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-2">
+        <img src="assets/img/books.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> 
+        <a class="navbar-brand" href="app_tareas"> App de Tareas</a>
+    </nav>
     <div class="m-0 row justify-content-center align-items-center">
         <div class="col-6 text-center">
             <form id="formulario_alumno" class="col-auto">
