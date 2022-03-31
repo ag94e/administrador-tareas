@@ -20,7 +20,7 @@ session_start();
     </nav>
     <br>
     <div class="d-flex justify-content-around">
-        <h3>Bienvenido: <?php echo $_SESSION["nombre"]; ?></h3>
+        <h3>Bienvenido: <?php echo $_SESSION["nombre_alumno"]; ?></h3>
     </div>
     <input type="hidden" name="usuario" id="usuario" value="<?php echo $_SESSION["usuario"]; ?>">
     <div class="container-fluid">

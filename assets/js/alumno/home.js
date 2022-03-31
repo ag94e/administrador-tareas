@@ -36,13 +36,13 @@ window.onload = function () {
                     tabla.innerHTML = template
                 }
             })
-            .catch(error => {
-                if (confirm("Hubo un error en la busqueda de este alumno, hable a su tutor para validar esta información.")) {
-                    location.href = 'vista_login'
-                } else {
-                    location.href = 'vista_login'
-                }
-            })
+            // .catch(error => {
+            //     if (confirm("Hubo un error en la busqueda de este alumno, hable a su tutor para validar esta información.")) {
+            //         location.href = 'app_tareas'
+            //     } else {
+            //         location.href = 'app_tareas'
+            //     }
+            // })
     }
 }
 
@@ -66,14 +66,14 @@ function subir_archivo(id, id_tarea){
                 location.href='vista_home_alumno';
              },1000);
         })
-        .catch(error => {
-            if (confirm("El archivo no se ha subido correctamente.")) {
-                console.error(error)
-                location.href='vista_home_alumno'
-            } else {
-                location.href='vista_home_alumno'
-            }
-        })
+        // .catch(error => {
+        //     if (confirm("El archivo no se ha subido correctamente.")) {
+        //         console.error(error)
+        //         location.href='vista_home_alumno'
+        //     } else {
+        //         location.href='vista_home_alumno'
+        //     }
+        // })
     }else{
         Swal.fire(
             'Sin archivo',

@@ -11,20 +11,22 @@ class home{
 
     public function mostrar_tareas($usuario){
         $resultado = $this->db->query("
-        SELECT T.id_tarea, T.nombre AS nombre_tarea, M.nombre AS nombre_materia, T.fecha_limite, T.fecha_de_entrega, T.calificacion, T.id_archivo, A.nombre AS archivo 
-	        FROM tarea AS T 
-                INNER JOIN materia AS M ON T.id_materia = M.id_materia 
-                LEFT JOIN archivo as A ON T.id_archivo = A.id_archivo
-            WHERE T.id_grupo = (SELECT id_grupo FROM alumno WHERE alumno.usuario = '$usuario');");
+        SELECT T.id_tarea, T.nombre_tarea, M.nombre_materia, T.fecha_limite, AR.fecha_entrega, AR.calificacion, AR.nombre_archivo
+        FROM alumno AS AL
+            INNER JOIN grupo AS G ON G.id_grupo = AL.id_grupo
+            INNER JOIN tarea AS T ON T.id_grupo = AL.id_grupo
+            INNER JOIN materia AS M ON M.id_materia = T.id_materia
+            LEFT JOIN archivo_alumno AS AR ON (AR.id_alumno = AL.id_alumno AND AR.id_tarea = T.id_tarea)
+        WHERE AL.id_alumno = (SELECT id_alumno FROM alumno WHERE usuario = '$usuario')");
         while($fila = mysqli_fetch_array($resultado)){
             $this->lista[] = array(
                 "tabla_id" => $fila["id_tarea"],
                 "tabla_nombre" => $fila["nombre_tarea"],
                 "table_materia" => $fila["nombre_materia"],
                 "tabla_limite" => $fila["fecha_limite"],
-                "tabla_entrega" => $fila["fecha_de_entrega"],
+                "tabla_entrega" => $fila["fecha_entrega"],
                 "tabla_calificacion" => $fila["calificacion"],
-                "tabla_archivo" => $fila["archivo"],
+                "tabla_archivo" => $fila["nombre_archivo"],
             );
         }
         return $this->lista;

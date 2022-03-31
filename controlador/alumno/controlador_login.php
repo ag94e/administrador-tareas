@@ -14,10 +14,10 @@ if(empty($resultado)){
     $status = 1;
     foreach($resultado as $r){
         $usuario_tabla = $r['usuario'];
-        $nombre = $r['nombre'];
+        $nombre = $r['nombre_alumno'];
         $id_usuario = $r['id_alumno'];
     }
-    $_SESSION["nombre"] = $nombre;
+    $_SESSION["nombre_alumno"] = $nombre;
     $_SESSION["usuario"] = $usuario;
     $_SESSION["id_alumno"] = $id_usuario;
 
