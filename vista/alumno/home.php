@@ -41,8 +41,6 @@ session_start();
                     <tr>
                         <td>Nombre</td>
                         <td>Materia</td>
-                        <td>Fecha Límite</td>
-                        <td>Fecha de entrega</td>
                         <td>Calificación</td>
                         <td>Archivo</td>
                     </tr>

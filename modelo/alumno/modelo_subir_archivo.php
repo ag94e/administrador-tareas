@@ -1,7 +1,4 @@
 <?php 
-if (!isset($_SESSION["nombre_alumno"])) {
-    header("location: ../../app_tareas");
-}
 include 'conexion.php';
 
 class archivo{
@@ -12,8 +9,9 @@ class archivo{
         $this->db = conexion::conn();
     }
 
-    public function subir_archivo($fecha_entrega, $nombre_archivo, $tipo, $ruta_archivo, $id_tarea, $id_alumno){
-        $resultado = $this->db->query("INSERT INTO archivo_alumno (fecha_entrega, nombre_archivo, tipo, ruta_archivo, id_tarea, id_alumno) VALUES ('$fecha_entrega', '$nombre_archivo', '$tipo', '$ruta_archivo', '$id_tarea', '$id_alumno')");
+    public function subir_archivo($nombre_archivo, $tipo, $ruta_archivo, $id_tarea, $id_alumno){
+        $resultado = $this->db->query("INSERT INTO archivo_alumno (nombre_archivo, tipo, ruta_archivo, id_tarea, id_alumno) 
+                                        VALUES ('$nombre_archivo', '$tipo', '$ruta_archivo', '$id_tarea', '$id_alumno')");
         if ($resultado != 1) {
             $respuesta = "El archivo no se ha subido correctamente, verifique el archivo, o bien, si persiste el error, hable con el maestro.";
         }else{

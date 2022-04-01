@@ -14,16 +14,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Home</title>
-    <style>
-table{
-  table-layout: fixed;
-}
-#tabla_tarea th{
-  width: 130px;
-  overflow: auto;
-  border: 1px solid;
-}
-    </style>
 </head>
 <body class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-2">
@@ -37,27 +27,28 @@ table{
         <h3>Bienvenido: <?php echo $_SESSION["nombre_maestro"]; ?></h3>
     </div>
     <br>
-    <input type="hidden" name="usuario" id="usuario" value="<?php echo $_SESSION["usuario"]; ?>">
-    <div class="container col-12">
-           <table class="table table-striped table-hover" id="tabla_tareas">
+   <div class="container-fluid">
+       <div class="row">
+           <div class="col-6">
+           <table class="d-flex justify-content-center table table-striped table-hover">
                 <thead>        
                     <tr>
-                        <th class='col-3'>Tarea</td>
-                        <th class='col-3'>Materia</td>
-                        <th class='col-2'>Grupo</td>
-                        <th class='col-4'></th>
+                        <td>Tarea</td>
+                        <td>Fecha entrega</td>
+                        <td>Materia</td>
+                        <td>Grupo</td>
+                        <td>Alumno</td>
+                        <td>Calificación</td>
                     </tr>
                 </thead>
-                <tbody id="tareas">
-                </tbody>
             </table>
+           </div>
        </div>
-    </div>
-    <script src="assets/js/maestro/home.js"></script>
+   </div>
+    <script src="assets/js/alumno/home.js"></script>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/toastr.min.js"></script>
     <script src="assets/js/cerrar_sesion.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

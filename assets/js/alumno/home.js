@@ -17,17 +17,13 @@ window.onload = function () {
                     tareas.forEach(tarea => {
                         template += `<tr> <td>
                             ${tarea.tabla_nombre} </td> <td>
-                            ${tarea.table_materia} </td> <td>
-                            ${tarea.tabla_limite} </td> <td>
-                            ${tarea.tabla_entrega == null ? "" : tarea.tabla_entrega} </td> <td>
+                            ${tarea.tabla_materia} </td> <td>
                             ${tarea.tabla_calificacion == null ? "" : tarea.tabla_calificacion} </td> <td>
                             ${tarea.tabla_archivo == null ? "<input class='form-control' type='file' name='archivo' id='tarea"+tarea.tabla_id+"'> <br> <input type='submit' class='btn btn-success' value='Subir' formenctype='multipart/form-data' onclick='subir_archivo(`tarea"+tarea.tabla_id+"`, "+tarea.tabla_id+")'>" : tarea.tabla_archivo} </td> </tr>
                         `})
                     tabla.innerHTML = template
                 }else{
                     template = ` <tr> <td>
-                    No hay información </td> <td>
-                    No hay información </td> <td>
                     No hay información </td> <td>
                     No hay información </td> <td>
                     No hay información </td> <td>

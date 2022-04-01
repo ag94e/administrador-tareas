@@ -1,6 +1,6 @@
 #Regla para evitar .php en las urls
 
-Options -Indexes
+#Options -Indexes
 
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -14,7 +14,7 @@ RewriteRule ^app_tareas$ vista/home.php [L]
 DirectoryIndex vista/home.php
 
 ###########################################################################################
-####################################### Alumnos ###########################################
+####################################### ALUMNOS ###########################################
 
 # Login
 RewriteRule ^vista_login_alumno$ vista/alumno/login.php [L]
@@ -46,6 +46,21 @@ RewriteRule ^vista_home_maestro$ vista/maestro/home.php [L]
 
 # login controller
 RewriteRule ^controlador_login_maestro$ controlador/maestro/controlador_login.php [L]
+
+# home controller
+RewriteRule ^controlador_home_maestro$ controlador/maestro/controlador_home.php [L]
+
+# editar archivo controller
+RewriteRule ^controlador_editar_tarea_maestro$ controlador/maestro/controlador_editar_tarea.php [L]
+
+# mostrar materias por maestro
+RewriteRule ^controlador_mostrar_materias_maestro$ controlador/maestro/controlador_mostrar_materias.php [L]
+
+# guardar tarea editada por maestro
+RewriteRule ^controlador_guardar_tarea_editada_maestro$ controlador/maestro/controlador_guardar_tarea_editada.php [L]
+
+# eliminar tarea por maestro
+RewriteRule ^controlador_eliminar_tarea_maestro$ controlador/maestro/controlador_eliminar_tarea.php [L]
 
 
 

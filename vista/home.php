@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION['nombre_alumno'])){
+  header("Location: vista_home_alumno");
+}elseif(isset($_SESSION['nombre_maestro'])){
+  header("Location: vista_home_maestro");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

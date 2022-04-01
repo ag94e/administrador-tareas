@@ -1,7 +1,4 @@
-<?php 
-if (!isset($_SESSION["nombre_alumno"])) {
-    header("location: ../../app_tareas");
-}
+<?php
 include 'conexion.php';
 
 class home{
@@ -14,7 +11,7 @@ class home{
 
     public function mostrar_tareas($usuario){
         $resultado = $this->db->query("
-        SELECT T.id_tarea, T.nombre_tarea, M.nombre_materia, T.fecha_limite, AR.fecha_entrega, AR.calificacion, AR.nombre_archivo
+        SELECT T.id_tarea, T.nombre_tarea, M.nombre_materia, AR.calificacion, AR.nombre_archivo
         FROM alumno AS AL
             INNER JOIN grupo AS G ON G.id_grupo = AL.id_grupo
             INNER JOIN tarea AS T ON T.id_grupo = AL.id_grupo
@@ -25,9 +22,7 @@ class home{
             $this->lista[] = array(
                 "tabla_id" => $fila["id_tarea"],
                 "tabla_nombre" => $fila["nombre_tarea"],
-                "table_materia" => $fila["nombre_materia"],
-                "tabla_limite" => $fila["fecha_limite"],
-                "tabla_entrega" => $fila["fecha_entrega"],
+                "tabla_materia" => $fila["nombre_materia"],
                 "tabla_calificacion" => $fila["calificacion"],
                 "tabla_archivo" => $fila["nombre_archivo"],
             );
