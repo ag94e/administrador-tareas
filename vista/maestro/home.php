@@ -38,21 +38,34 @@ table{
     </div>
     <br>
     <input type="hidden" name="usuario" id="usuario" value="<?php echo $_SESSION["usuario"]; ?>">
-    <div class="container col-12">
-           <table class="table table-striped table-hover" id="tabla_tareas">
-                <thead>        
-                    <tr>
-                        <th class='col-3'>Tarea</td>
-                        <th class='col-3'>Materia</td>
-                        <th class='col-2'>Grupo</td>
-                        <th class='col-4'></th>
-                    </tr>
-                </thead>
-                <tbody id="tareas">
-                </tbody>
+    <div class="row px-1">
+        <div class="col-2">
+        <a href="home_crear_tarea" class="link-dark"><button class="btn btn-success">Ir a crear tareas</button></a>
+        <br>
+        <br>
+        <a href="home_calificar_tarea" class="link-dark"><button class="btn btn-info">Ir a calificar tareas</button></a>
+        <br>
+        <br>
+        <!-- <a href="home_enviar_email" class="link-dark"><button class="btn btn-warning">Enviar Email</button></a> -->
+        </div>
+        <div class="col-10">
+        <div class="container col-12">
+            <table class="table table-striped table-hover" id="tabla_tareas">
+                    <thead>        
+                        <tr>
+                            <th class='col-3'>Tarea</td>
+                            <th class='col-3'>Materia</td>
+                            <th class='col-2'>Grupo</td>
+                            <th class='col-4'></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tareas">
+                    </tbody>
             </table>
-       </div>
+            </div>
+        </div>
     </div>
+
     <script src="assets/js/maestro/home.js"></script>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/toastr.min.js"></script>

@@ -62,6 +62,33 @@ RewriteRule ^controlador_guardar_tarea_editada_maestro$ controlador/maestro/cont
 # eliminar tarea por maestro
 RewriteRule ^controlador_eliminar_tarea_maestro$ controlador/maestro/controlador_eliminar_tarea.php [L]
 
+# vista crear tarea por maestro
+RewriteRule ^home_crear_tarea$ vista/maestro/crear_tarea.php [L]
+
+# vista calificar tarea por maestro
+RewriteRule ^home_calificar_tarea$ vista/maestro/calificar_tarea.php [L]
+
+# cargar grupos por maestro
+RewriteRule ^cargar_grupos_maestro$ controlador/maestro/cargar_grupos.php [L]
+
+# cargar materia por maestro
+RewriteRule ^cargar_materias_maestro$ controlador/maestro/cargar_materia.php [L]
+
+# crear tarea por maestro
+RewriteRule ^controlador_crear_tarea_maestro$ controlador/maestro/controlador_crear_tarea.php [L]
+
+# mostrar tareas para calificar por maestro
+RewriteRule ^controlador_mostrar_tareas_maestro$ controlador/maestro/controlador_mostrar_tarea_para_calificar.php [L]
+
+# calificar tarea por maestro
+RewriteRule ^controlador_calificar_tarea_maestro$ controlador/maestro/controlador_calificar_tarea.php [L]
+
+# Home enviar email
+RewriteRule ^home_enviar_email$ vista/maestro/enviar_email.php [L]
+
+# controlador enviar correo
+RewriteRule ^enviar_correo$ controlador/maestro/enviar_correo.php [L]
+
 
 
 # cerrar sesion controller

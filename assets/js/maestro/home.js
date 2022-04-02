@@ -35,17 +35,17 @@ window.onload = function () {
                     tabla.innerHTML = template
                 }
             })
-            // .catch(error => {
-            //     alert("Hubo un error en la busqueda de este alumno, hable con un supervisor para revisar este error.")
-            //     fetch('controlador_cerrar_sesion_maestro', {
-            //         method: "post" })
-            //         .then((response) => response.json())
-            //         .then(data => {
-            //             if(data.status == "1"){
-            //                 location.href="app_tareas"
-            //             }
-            //         })
-            // })
+            .catch(error => {
+                alert("Hubo un error en la busqueda de este alumno, hable con un supervisor para revisar este error.")
+                fetch('controlador_cerrar_sesion_maestro', {
+                    method: "post" })
+                    .then((response) => response.json())
+                    .then(data => {
+                        if(data.status == "1"){
+                            location.href="app_tareas"
+                        }
+                    })
+            })
     }
 }
 

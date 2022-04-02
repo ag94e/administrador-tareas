@@ -18,36 +18,39 @@ session_start();
 <body class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-2">
         <div class="container-fluid">
-            <a class="navbar-brand" href="vista_home_alumno">App de Tareas</a>
+            <a class="navbar-brand" href="vista_home_maestro">App de Tareas</a>
             <button class="btn btn-primary" onclick="cerrar_sesion_maestro()" >Cerrar sesión</button>
         </div>
     </nav>
     <br>
-    <div class="d-flex justify-content-around">
-        <h3>Bienvenido: <?php echo $_SESSION["nombre_maestro"]; ?></h3>
+    <div class="row d-flex justify-content-around">
+        <div class="col-2">
+            <a class="ps-3" href="vista_home_maestro"><button class="btn btn-primary">Regresar</button></a>
+        </div>
+        <div class="col-10 text-center">
+            <h3>Bienvenido: <?php echo $_SESSION["nombre_maestro"]; ?></h3>
+            <input type="hidden" id="nombre_maestro" value="<?php echo $_SESSION["usuario"];?>">
+        </div>
     </div>
     <br>
-   <div class="container-fluid">
-       <div class="row">
-           <div class="col-6">
-           <table class="d-flex justify-content-center table table-striped table-hover">
+   <div class="container">
+       <div class="row d-flex justify-content-center">
+           <table class="table table-striped table-hover">
                 <thead>        
-                    <tr>
-                        <td>Tarea</td>
-                        <td>Fecha entrega</td>
-                        <td>Materia</td>
-                        <td>Grupo</td>
-                        <td>Alumno</td>
-                        <td>Calificación</td>
+                    <tr class="text-center">
+                        <th class="col-3">Nombre de tarea</th>
+                        <th class="col-2">Calificación</th>
+                        <th class="col-3">Archivo</th>
+                        <th class="col-2">Matrícula</th>
+                        <th class="col-2"></th>
                     </tr>
                 </thead>
+                <tbody id="tareas">
+                </tbody>
             </table>
-           </div>
        </div>
    </div>
-    <script src="assets/js/alumno/home.js"></script>
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/toastr.min.js"></script>
+    <script src="assets/js/maestro/calificar_tarea.js"></script>
     <script src="assets/js/cerrar_sesion.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
